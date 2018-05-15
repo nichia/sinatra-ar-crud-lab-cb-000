@@ -1,0 +1,6 @@
+<h1>Blog Index Listing</h1>
+<% @posts.each_with_index do |post, index| %>
+  <p><%= index + 1 %>: Post Id <%= post.id %></p>
+  <p>Name: <%= post.name %></p>
+  <p>Content: <%= post.content %></p>
+<% end %>
