@@ -43,12 +43,12 @@ class ApplicationController < Sinatra::Base
 
   # Edit Patch post: Update the post instance
   patch '/posts/:id' do
-    post = Post.find_by_id(params[:id])
-    post.name = params[:name]
-    post.content = params[:content]
-    post.save
+    @post = Post.find_by_id(params[:id])
+    @post.name = params[:name]
+    @post.content = params[:content]
+    @post.save
 
-    redirect :"/posts/#{post.id}"
+    erb :show
   end
 
   # Delete Post: Delete the post instance
